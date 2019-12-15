@@ -1,0 +1,101 @@
+/* transform: rotate(-165deg);
+  background-image: linear-gradient(183deg, #00132c 60%, rgba(21, 52, 98, 0.9) -11%);
+    top: 14vh;
+    left: 53vw;
+   */
+.header3 {
+  @include header-height;
+  width: 100vw;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(193, 85, 85, 0.8),
+      rgba(36, 2, 2, 0.8)
+    ),
+    url(../../mars-one-project/imgs/olu-gbadebo.png);
+
+  background-size: cover;
+  background-position: top;
+  position: relative;
+
+  .hero3 {
+    position: relative;
+    @include header-height;
+    overflow: hidden;
+
+    &::after {
+      display: none;
+      @media (min-width: $bp-ipad) {
+        content: "";
+        display: unset;
+        position: absolute;
+        bottom: -16vw;
+        left: -8vw;
+        z-index: 1;
+        width: 125vw;
+        height: 76vh;
+        transform: rotate(5deg);
+        background-image: linear-gradient(
+          182deg,
+          #00132c 61%,
+          rgba(21, 52, 98, 0.9)
+        );
+        /* border-radius: 44% 56% 100% 0% / 41% 100% 0% 59%; */
+        border-radius: 29% 71% 100% 0% / 30% 100% 0% 70%;
+        /* border: 1rem solid $color-light-blue; */
+        border: 1.6rem solid #436daca3;
+      }
+    }
+    .hero-content3 {
+      //mobile first
+      @include text-middle-1;
+      text-align: center;
+      z-index: 3;
+      place-self: center;
+      padding: 1em;
+      color: white;
+      text-shadow: 2px 2px 5px #000;
+      @media (min-width: $bp-ipad) {
+        text-align: left;
+        line-height: normal;
+        position: absolute;
+        /* top: 65vh;
+        left: 25vw; */
+        /* top: 69vh;
+        left: 17vw; */
+        top: 48vh;
+        left: 13vw;
+        transform: translateX(0) translateY(0);
+      }
+      &__h1 {
+        font-size: 2.7rem;
+        padding-bottom: 1rem;
+        @media (min-width: $bp-ipad) {
+          &-break::before {
+            content: " ";
+            display: block;
+          }
+        }
+        @media (min-width: 467px) {
+          font-size: 2.7rem;
+        }
+        @media (min-width: $bp-ipad) {
+          font-size: 3.6rem;
+        }
+        /* @media (min-width: $bp-ipadpro) {
+          font-size: 3rem;
+        } */
+      }
+      &__h2 {
+        font-size: 2.5rem;
+        color: #436dac;
+        @media (min-width: $bp-ipad) {
+          letter-spacing: 2px;
+          &-break::before {
+            content: " ";
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+//mobil version:
+//one column only, text comes first, text-align: center
+//2 rows 1 column
+
+//desktop version:
+//1 row 2 column
+
+//font-color and margin may need to be fixed.
+
+.main {
+  position: relative;
+  .content1-1 {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $bp-ipadmini) {
+      display: grid;
+      grid-template-areas: "img text";
+      grid-template-columns: 1fr 1.5fr;
+    }
+
+    &__text {
+      order: 1;
+      min-width: 100%;
+      grid-area: text;
+      padding: 4rem 10vw;
+      @include text-middle-2;
+      @media (min-width: $bp-ipadmini) {
+        padding: 3rem 4vw;
+      }
+      h2 {
+        color: $color-red;
+        font-size: 1.7rem;
+        /* font-size: 2rem; */
+        @media (min-width: $bp-ipadmini) {
+          font-size: calc(7px + 1.6vw);
+        }
+      }
+      p {
+        font-size: 1.2rem;
+        /* font-size: 1.5rem; */
+        @media (min-width: $bp-ipadmini) {
+          font-size: calc(2px + 1.4vw);
+        }
+      }
+    }
+
+    &__img-wrapper {
+      order: 2;
+      display: block;
+      @media (min-width: $bp-ipadmini) {
+        grid-area: img;
+      }
+
+      img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+      }
+    }
+  }
+}

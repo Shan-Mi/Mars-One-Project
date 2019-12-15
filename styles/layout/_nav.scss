@@ -1,0 +1,55 @@
+//mobil version maybe need to change sth, 2 rows maybe
+//width 377, adjust nav font-size
+.nav {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: $color-main-dark;
+  height: 8rem;
+  z-index: 2;
+  @media screen and (min-width: $bp-ipad) {
+    height: 6rem;
+    flex-direction: row;
+    position: relative;
+  }
+
+  .logo-wrapper {
+    transform: translateX(-2vw);
+    @media screen and (min-width: $bp-ipad) {
+      margin-left: 3rem;
+      margin-right: auto;
+      align-self: center;
+    }
+  }
+
+  &__list {
+    margin: 0 3rem;
+    display: flex;
+    justify-content: center;
+
+    @media screen and (min-width: $bp-ipad) {
+      /* align-self: center; */
+    }
+    ul {
+      display: contents;
+      list-style: none;
+      li {
+        font-size: 1.2rem;
+        margin-right: 1.9rem;
+        align-self: center;
+        
+        a {
+          color: $color-white;
+        }
+        @media screen and (min-width: $bp-iphone) {
+          font-size: 1.6rem;
+          margin-right: 5rem;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

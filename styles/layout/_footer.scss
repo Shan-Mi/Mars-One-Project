@@ -1,0 +1,21 @@
+.footer {
+  height: 25vh;
+  text-align: center;
+  color: $color-white;
+  background-color: $color-dark-blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &__h3 {
+    padding-bottom: 2rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+  }
+  &__p {
+    font-size: 1rem;
+    .mars-red {
+      color: $color-footer-red;
+    }
+  }
+}

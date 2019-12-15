@@ -1,0 +1,161 @@
+//grid or flex
+// include title and a form
+
+//mobil version is similar
+//content:
+// first name
+// last name
+// ...
+// every item in one row
+
+.main {
+  display: grid;
+  &__article {
+    display: grid;
+    background: #f1f1f1;
+    &-text {
+      padding: 5rem 0;
+      padding-top: 7rem;
+      width: 80%;
+      text-align: center;
+      place-self: center;
+
+      h2 {
+        font-size: $font-red-h3;
+        color: $color-red;
+      }
+      p {
+        font-size: $font-p-big;
+        color: $color-dark-blue;
+        width: 80%;
+        margin: 0 auto;
+        @media (min-width: $bp-ipad) {
+          width: 39%;
+        }
+      }
+    }
+    form {
+      display: grid;
+      grid-template-columns: [title] 0.5fr [content] 1fr;
+
+      grid-row-gap: 2rem;
+      /* min-width: $bp-iphone; */
+      min-width: 310px;
+      /* padding: 0 1rem; */
+      place-self: center;
+      //
+      padding: 2rem 7rem 5rem;
+      background: #fff;
+      margin-bottom: 5rem;
+
+      label {
+        font-size: $font-btn;
+        color: $color-dark-blue;
+        font-weight: bold;
+        @media (min-width: $bp-ipad) {
+          align-self: flex-end;
+          margin-bottom: 1rem;
+        }
+      }
+      > input,
+      > textarea {
+        border-radius: 5px;
+        border: 1px solid #2c4f80;
+      }
+      .sub-btn {
+        grid-column: content;
+        margin: 1rem 0 3rem;
+      }
+
+      @media (min-width: 375px) {
+        min-width: 86vw;
+      }
+      @media (min-width: $bp-ipad) {
+        min-width: 86vw;
+        max-width: 100%;
+        /* grid-column-gap: 2rem; */
+        grid-column-gap: 5rem;
+        grid-row-gap: 0rem;
+        grid-template-columns: [left-start] 1fr [second] 1fr [third] 0.8fr;
+        /* grid-template-rows: repeat(5, 1fr) 4fr; */
+        grid-template-rows: 2fr 1fr 2fr 1fr 2fr 4fr;
+        grid-template-areas:
+          "fn-1 ln-1 db-1"
+          "fn-2 ln-2 db-2"
+          "pr-1 ps-1 ."
+          "pr-2 ps-2 ."
+          "mo-1 mo-1 mo-1"
+          "mo-2 mo-2 mo-2"
+          "sub-btn sub-btn sub-btn";
+      }
+      .fn-1 {
+        @media (min-width: $bp-ipad) {
+          grid-area: fn-1;
+        }
+      }
+      .fn-2 {
+        @media (min-width: $bp-ipad) {
+          grid-area: fn-2;
+        }
+      }
+      .ln-1 {
+        @media (min-width: $bp-ipad) {
+          grid-area: ln-1;
+        }
+      }
+      .ln-2 {
+        @media (min-width: $bp-ipad) {
+          grid-area: ln-2;
+        }
+      }
+      .db-1 {
+        @media (min-width: $bp-ipad) {
+          grid-area: db-1;
+        }
+      }
+      .db-2 {
+        @media (min-width: $bp-ipad) {
+          grid-area: db-2;
+        }
+      }
+      .pr-1 {
+        @media (min-width: $bp-ipad) {
+          grid-area: pr-1;
+        }
+      }
+      .pr-2 {
+        @media (min-width: $bp-ipad) {
+          grid-area: pr-2;
+        }
+      }
+      .ps-1 {
+        @media (min-width: $bp-ipad) {
+          grid-area: ps-1;
+        }
+      }
+      .ps-2 {
+        @media (min-width: $bp-ipad) {
+          grid-area: ps-2;
+        }
+      }
+      .mo-1 {
+        @media (min-width: $bp-ipad) {
+          grid-area: mo-1;
+        }
+      }
+      .mo-2 {
+        @media (min-width: $bp-ipad) {
+          grid-area: mo-2;
+        }
+      }
+      .sub-btn {
+        @media (min-width: $bp-ipad) {
+          grid-area: sub-btn;
+          justify-self: center;
+          margin-top: 4rem;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

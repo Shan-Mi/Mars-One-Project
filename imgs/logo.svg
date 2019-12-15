@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="71" height="44" viewBox="0 0 71 44">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#061B38" d="M-1.2 0h72v44.4h-72z"/>
+        <text fill="#E32700" font-family="Montserrat-ExtraBoldItalic, Montserrat" font-size="30.6" font-style="italic" font-weight="600" letter-spacing="1.131" transform="translate(-1.2)">
+            <tspan x="3.6" y="38.52">O</tspan>
+        </text>
+        <text fill="#061B38" font-family="Montserrat-ExtraBoldItalic, Montserrat" font-size="30.6" font-style="italic" font-weight="600" letter-spacing="1.131" transform="translate(-1.2)">
+            <tspan x="3.6" y="36.48">O</tspan>
+        </text>
+        <text fill="#F1F1F1" font-family="Montserrat-Medium, Montserrat" font-size="7.2" font-weight="400" letter-spacing="8.186" transform="translate(-1.2)">
+            <tspan x="13.502" y="11.8">MARS</tspan>
+        </text>
+        <text fill="#E32700" font-family="Montserrat-Light, Montserrat" font-size="30.6" font-weight="300" letter-spacing="-1.828" transform="translate(-1.2)">
+            <tspan x="30.12" y="36.48">ne</tspan>
+        </text>
+    </g>
+</svg>

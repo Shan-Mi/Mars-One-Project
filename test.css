@@ -1,0 +1,63 @@
+.header3 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
+  min-height: 100vh;
+  background: center/cover -webkit-gradient(linear, left top, right bottom, from(rgba(193, 85, 85, 0.8)), to(rgba(36, 2, 2, 0.8))), url(../mars-one-project/imgs/olu-gbadebo.png) no-repeat;
+  background: center/cover linear-gradient(to right bottom, rgba(193, 85, 85, 0.8), rgba(36, 2, 2, 0.8)), url(../mars-one-project/imgs/olu-gbadebo.png) no-repeat;
+}
+
+.header3__content .hero3 {
+  position: relative;
+  overflow: hidden;
+}
+
+.header3__content .hero3 .oval3 {
+  position: absolute;
+  bottom: -32vw;
+  left: -10vw;
+  z-index: 1;
+  width: 127vw;
+  height: 58vw;
+  /* max-height: 100vh; */
+  -webkit-transform: rotate(-165deg);
+          transform: rotate(-165deg);
+  background-image: linear-gradient(182deg, #00132c 61%, rgba(21, 52, 98, 0.9));
+  border-radius: 50%;
+  border: 1rem solid lightblue;
+}
+
+.header3__content .hero3 .hero-content3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  z-index: 3;
+  place-self: center;
+  padding: 1em;
+  color: white;
+  text-shadow: 2px 2px 5px #000;
+}
+
+@media (min-width: 678px) {
+  .header3__content .hero3 .hero-content3 {
+    text-align: left;
+    top: 66vh;
+    left: 18vw;
+    -webkit-transform: translateX(0) translateY(0);
+            transform: translateX(0) translateY(0);
+  }
+}
+
+.header3__content .hero3 .hero-content3__h1-break::before {
+  content: " ";
+  display: block;
+}
+
+.header3__content .hero3 .hero-content3__h2-break::before {
+  content: " ";
+  display: block;
+}
+/*# sourceMappingURL=test.css.map */

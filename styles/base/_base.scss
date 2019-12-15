@@ -1,0 +1,54 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  width: 100%;
+  max-width: 1440px;
+}
+
+body {
+  min-width: 320px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  box-sizing: border-box;
+  margin: 0 auto;
+  position: relative;
+  /* transition: all ease-in 600ms; */
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  header {
+    max-width: 1440px;
+    min-width: 320px;
+  }
+  a {
+    text-decoration: none;
+    cursor: unset;
+    @media (min-width: $bp-ipad) {
+      &:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+    }
+  }
+
+  h1 {
+    border-bottom: 2px solid $color-white;
+  }
+  /* img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  } */
+}
+
+.active {
+  border-bottom: 1.4px solid rgb(224, 26, 26);
+}

@@ -1,0 +1,208 @@
+//mobil version:
+//3 parts come one after another
+//img and content take one row individually
+//change grid-template-column: 1 column
+
+//tablett version:
+//3 parts come one after another
+//change grid-template-column: 1 column
+
+//desktop version:
+//grid: 3 row 2 column
+//grid-template: 1fr 3fr 3fr / 2fr 1fr;
+
+.content1-2 {
+  background-color: $color-bgc;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+  @media (min-width: $bp-ipad) {
+    /* padding: 0 3rem; */
+    padding: 3rem;
+    padding-left: 6rem;
+    padding-right: 5rem;
+    padding-bottom: 7rem;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template:
+      "text text" 0.5fr
+      "red-planet solar" 2fr
+      "base solar" 2fr / 2.2fr 1fr;
+  }
+
+  &__h2-wrapper {
+    align-self: center;
+    padding: 4rem 0 2.2rem;
+    h2 {
+      font-size: 1.7rem;
+      animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.61, 0.355, 1)
+        both;
+      @media (min-width: $bp-ipadmini) {
+        font-size: calc(7px + 1.6vw);
+      }
+    }
+
+    @media (min-width: $bp-ipadmini) {
+      padding-top: 2rem;
+      place-self: center;
+      grid-area: text;
+    }
+  }
+
+  .red-planet {
+    .img-wrapper {
+      max-width: 150px;
+      img {
+        width: 60%;
+        @media (min-width: 414px) {
+          width: 100%;
+        }
+        @media (min-width: $bp-ipad) {
+          /* width: 70%; */
+          width: 11vw;
+          min-width: 100px;
+        }
+      }
+    }
+  }
+
+  .base {
+    .img-wrapper {
+      max-width: 150px; //mobile & tablett
+      //new here
+      @media (min-width: $bp-ipad) {
+        max-width: unset;
+        /* align-self: stretch; */
+        justify-self: left;
+      }
+      img {
+        /* min-width: 100%;
+        max-width: 150px; */
+        width: 90px;
+        clip-path: circle(); //mobile
+        @media (min-width: 414px) {
+          min-width: 100%;
+          max-width: 150px;
+          width: 80%;
+        }
+        @media (min-width: $bp-ipad) {
+          width: 100%;
+          max-width: unset;
+          min-height: 230px;
+          clip-path: unset;
+          object-fit: cover;
+          display: block;
+        }
+      }
+    }
+  }
+
+  .solar {
+    .img-wrapper {
+      max-width: 150px; //mobile
+      img {
+        width: 90px;
+        @media (min-width: 414px) {
+          width: 100%;
+        }
+      }
+    }
+    @media (min-width: $bp-ipad) {
+      grid-area: solar;
+      display: grid;
+      grid-template: 1.2fr 2fr / 1fr;
+      grid-gap: unset;
+      .text-wrapper {
+        /* align-items: center; */
+        justify-content: space-around;
+      }
+    }
+    .text-wrapper {
+      @media (min-width: $bp-ipad) {
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
+      }
+      h3 {
+        @media (min-width: $bp-ipad) {
+          /*  padding: 0 3rem; */
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+
+  &__content-wrapper {
+    background-color: $color-white;
+    display: grid;
+    grid-gap: 2rem;
+    justify-content: space-around;
+    grid-template-columns: 1fr;
+    margin: 2rem;
+    padding-top: 2rem;
+    border-radius: 10px;
+    @media (min-width: 414px) {
+      /* grid-gap: 1.5rem; */
+      /* margin: 0; */
+      padding-left: 1rem;
+      padding-top: 0;
+      grid-template-columns: 1fr 2fr;
+    }
+    @media (min-width: $bp-ipad) {
+      margin: 0;
+      /* grid-gap: 2rem; */
+      //new here
+      padding-left: 0;
+      grid-template-columns: 1.4fr 2fr;
+      border-radius: unset;
+    }
+
+    .img-wrapper {
+      place-self: center;
+      display: block;
+
+      img {
+        /* width: 45%; */
+        display: block;
+        margin: 0 auto;
+        @media (min-width: $bp-ipad) {
+          /*  width: 55%; */
+        }
+      }
+    }
+
+    .text-wrapper {
+      text-align: left;
+      padding: 2rem;
+      @include text-middle-2;
+      h3,
+      .button {
+        align-self: center;
+        @media (min-width: 414px) {
+          align-self: unset;
+        }
+      }
+      h3 {
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+        color: $color-red;
+        @media (min-width: $bp-ipad) {
+          /* font-size: 1.3rem; */
+          font-size: $font-h;
+          margin-bottom: 0;
+        }
+      }
+      p {
+        font-size: 1.1rem;
+        @media (min-width: $bp-ipad) {
+          /* font-size: 1.1rem; */
+          font-size: $font-p;
+          line-height: calc(8px + 1vw);
+        }
+      }
+
+      .button {
+        width: max-content;
+      }
+    }
+  }
+}

@@ -1,0 +1,300 @@
+//page 2
+//title: F&Q
+//GRID: 3 row 2 column
+
+//mobil version:
+// 1. longest text
+// 2. is this trip risky
+// 3. what to do there with pic
+// 4. how long does it take with pic
+
+//first part of main section, 4 parts.
+.main {
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  &__section1 {
+    background-color: $color-bgc;
+    padding-bottom: 2rem;
+
+    &-content {
+      display: grid;
+      grid-gap: 2rem;
+      grid-template:
+        "text"
+        "div1"
+        "div2"
+        "div3";
+
+      @media (min-width: $bp-ipad) {
+        grid-template:
+          "text text"
+          "div1 div2" 1fr
+          "div1 div3" 1fr/ 1.2fr 2fr; //added row 1fr
+      }
+
+      &-h2 {
+        grid-area: text;
+        text-align: center;
+        font-size: 2rem; //mobile
+        //increase font-size to make sure h2 font-size is bigger than h3
+        @media (min-width: 1290px) {
+          font-size: calc(7px + 1vw);
+        }
+        color: $color-dark-blue;
+        padding: 3rem;
+        padding-bottom: 1rem;
+        animation: shake-bottom 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+      }
+
+      //long text area
+      &-div1 {
+        grid-area: div1;
+        padding: 3rem 4rem;
+        background-color: $color-white;
+
+        .p {
+          padding-bottom: 2rem;
+        }
+      }
+
+      //risky area with orange dots
+      &-div2 {
+        grid-area: div2;
+        padding: 3rem 4rem;
+        background-color: $color-white;
+
+        .ul {
+          list-style: none;
+          font-weight: bold;
+          font-size: 1rem; //mobile
+          @media (min-width: $bp-ipad) {
+            font-size: calc(2px + 1vw);
+          }
+          padding: 1rem 0;
+
+          .li:not(:last-child) {
+            padding-bottom: 1rem;
+          }
+          .red-dot {
+            color: red;
+          }
+        }
+      }
+
+      //many adjustments needed, complicate area (text and astronaut)
+      &-div3 {
+        grid-area: div3;
+        display: flex;
+        flex-direction: column;
+        padding: 3rem 4rem;
+        background-color: $color-white;
+
+        @media (min-width: 467px) {
+          flex-direction: row;
+        }
+        @media (min-width: $bp-ipad) {
+          padding: 0;
+        }
+        .text-wrapper {
+          flex: 60%;
+          align-self: center;
+          padding: 0;
+          @media (min-width: $bp-ipad) {
+            padding: 0 3rem;
+          }
+          @media (min-width: $bp-laptop) {
+            padding: 0 4rem;
+          }
+          /* padding: 0 2rem; */
+        }
+        .img-wrapper {
+          display: flex;
+          margin: 0 auto;
+          align-items: center;
+          /* width: 100%; */
+          padding-bottom: 0;
+          filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+          animation:rotate-vert-center 1s cubic-bezier(.455,.03,.515,.955) both;
+          @media (min-width: $bp-ipad) {
+            animation: unset;
+            filter: unset;
+          }
+          @media (min-width: $bp-laptop) {
+            padding: 0;
+          }
+          img {
+            width: 100%;
+            max-width: 100%;
+            max-width: 200px;
+            min-height: 100%;
+            object-fit: cover;
+            clip-path: polygon(
+              50% 0%,
+              90% 20%,
+              100% 60%,
+              75% 100%,
+              25% 100%,
+              0% 60%,
+              10% 20%
+            );
+            @media (min-width: $bp-ipad) {
+              clip-path: unset;
+              max-width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  //setting all 
+  .h3 {
+    font-size: 1.5rem;
+    @media (min-width: $bp-ipad) {
+      font-size: calc(7px + 1vw);
+    }
+    color: $color-red;
+    padding-bottom: 2rem;
+  }
+  .p {
+    font-size: 1.1rem;
+    @media (min-width: $bp-ipad) {
+      font-size: calc(2px + 1vw);
+    }
+    color: $color-black-p;
+  }
+
+  //solar system
+  &__section2 {
+    position: relative;
+    /* grid-template:
+      "solar-system"
+      "text"; */
+    @media (min-width: $bp-ipad) {
+      display: grid;
+      grid-template: "solar-system text";
+    }
+    .solar-system {
+      grid-area: solar-system;
+      background: black;
+      /* width: 100vw;
+      height: 100vw; */
+      width: 33vw;
+      height: 33vw;
+      display: grid;
+      grid: 1fr / 1fr;
+      place-items: center;
+
+      clip-path: circle();
+      position: absolute;
+      top: 8%;
+      left: 50%;
+      transform: translateX(-50%);
+      @media (min-width: 467px) {
+        top: 4%;
+        left: 1%;
+        transform: unset;
+      }
+      @media (min-width: $bp-ipad) {
+        clip-path: unset;
+        transform: unset;
+        position: static;
+        width: 34vw;
+        height: 34vw;
+      }
+    }
+
+    &-content {
+      grid-area: text;
+      place-self: center;
+      padding: 4rem;
+      padding-top: 48vw;
+      //ipad setting
+      @media (min-width: 467px) {
+        padding-top: 4rem;
+        &::before {
+          content: "";
+          float: left;
+          shape-outside: circle(50%);
+          width: 32vw;
+          height: 28vw;
+          @media (min-width: $bp-ipad) {
+            content: unset;
+          }
+        }
+      }
+    }
+
+    .sun,
+    .orb,
+    .ripple,
+    .ripple-item {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .sun {
+      height: 2vw;
+      width: 2vw;
+      border-radius: 100%;
+      background: yellow;
+      z-index: 300;
+    }
+
+    .orb {
+      border: 1px dashed grey;
+      border-radius: 100%;
+      animation: move-planet linear infinite;
+    }
+
+    .planet {
+      border-radius: 100%;
+      position: absolute;
+      left: 50%;
+      top: -10px;
+    }
+
+    .earth.orb {
+      height: 35%;
+      width: 35%;
+      animation-duration: 7s;
+    }
+
+    .earth .planet {
+      height: 2vw;
+      width: 2vw;
+      background: lightblue;
+    }
+
+    .mars.orb {
+      height: 69%;
+      width: 69%;
+      animation-duration: 10s;
+    }
+
+    .mars .planet {
+      height: 2vw;
+      width: 2vw;
+      background: coral;
+    }
+
+    .ripple {
+      display: grid;
+      grid: 1fr / 1fr;
+      place-items: center;
+    }
+
+    .ripple-item {
+      border-radius: 100%;
+      border: solid 2px white;
+      animation: ripple ease-in 3s infinite;
+    }
+
+    .ripple-item:nth-child(2) {
+      animation-delay: -400ms;
+    }
+
+    .ripple-item:nth-child(3) {
+      animation-delay: 500ms;
+    }
+  }
+}
