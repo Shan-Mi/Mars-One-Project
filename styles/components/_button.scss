@@ -12,16 +12,3 @@
     cursor: pointer;
   }
 }
-
-.go-top {
-
-  img {
-    //shown only on laptop
-    width: 4%;
-    position: fixed;
-    bottom: 3.5rem;
-    right: 5rem;
-    /* background: rgb(55, 110, 110) */
-    clip-path: circle();
-  }
-}

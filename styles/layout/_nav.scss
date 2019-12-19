@@ -27,9 +27,6 @@
     display: flex;
     justify-content: center;
 
-    @media screen and (min-width: $bp-ipad) {
-      /* align-self: center; */
-    }
     ul {
       display: contents;
       list-style: none;

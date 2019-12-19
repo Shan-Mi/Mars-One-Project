@@ -14,76 +14,89 @@
   overflow: hidden;
 
   .hero2 {
-    position: relative;
-    @include header-height;
+    @media (min-width: $bp-ipadmini) {
+      position: relative;
+      width: 150vw;
+      height: 120vh;
+      left: -37vw;
+      top: -59vh;
+      background-image: linear-gradient(
+        182deg,
+        #00132c 61%,
+        rgba(21, 52, 98, 0.9) -13%
+      );
+      clip-path: ellipse(50% 50% at 50% 50%);
+      transform: rotate(12deg);
+    }
 
     &::after {
       display: none;
-      @media (min-width: $bp-ipad) {
+      @media (min-width: $bp-ipadmini) {
         content: "";
+        background-color: #00132c;
         display: unset;
         position: absolute;
-        top: -10vh;
-        left: -2vw;
-        z-index: 1;
-        width: 110%;
-        height: 70vh;
-        -webkit-transform: rotate(6deg);
         background-image: linear-gradient(
           182deg,
           #00132c 61%,
           rgba(21, 52, 98, 0.9)
         );
-        border-radius: 0 0 50% 70%;
-        /* border: 1rem solid #436dac; */
-        border: 1.6rem solid #436daca3;
-        margin: -2rem;
+        width: 97%;
+        height: 95%;
+        clip-path: ellipse(50% 50% at 50% 50%);
+        left: 50%;
+        top: 50%;
+        transform: rotate(12deg);
+        transform: translate(-50%, -50%);
       }
     }
-    .hero-content2 {
-      //mobile first
-      @include text-middle-1;
-      text-align: center;
-      z-index: 3;
-      place-self: center;
-      padding: 1em;
-      color: white;
-      font-family: "Montserrat", sans-serif;
-      text-shadow: 2px 2px 5px #000;
-      @media (min-width: $bp-ipad) {
-        text-align: left;
-        line-height: normal;
-        /* top: 14vh;
-        left: 53vw; */
-        /* top: 11vh;
-        left: 64vw; */
-        top: 17vh;
-        left: 55vw;
-        transform: translateX(0) translateY(0);
-      }
-      &__h1 {
-        padding-bottom: 1rem;
+  }
 
-        @media (min-width: 467px) {
-          /* font-size: 2.7rem; */
-          font-size: 3.6rem;
-        }
-        /* @media (min-width: $bp-ipadpro) {
-          font-size: 3rem;
-        } */
+  .hero-content2 {
+    //mobile first
+    @include text-middle-1;
+    text-align: center;
+    z-index: 3;
+    place-self: center;
+    padding: 1em;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    @media (min-width: $bp-ipadmini) {
+      top: 11vh;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    @media (min-width: $bp-ipad) {
+      text-align: left;
+      line-height: normal;
+      top: 18vh;
+      left: 66vw;
+      transform: translateX(-50%) translateY(0);
+    }
+    &__h1 {
+      padding-bottom: 1rem;
+      white-space:nowrap;
+      @media (min-width: 467px) {
+        letter-spacing: 2px;
+        font-size: 3.6rem;
       }
-      &__h2 {
-        color: $color-light-blue;
-        @media (min-width: 467px) {
-          font-size: 2rem;
+    }
+    &__h2 {
+      color: $color-light-blue;
+      @media (min-width: 467px) {
+        letter-spacing: 2px;
+        font-size: 2rem;
+      }
+      @media (min-width: $bp-ipadmini) {
+        margin-top: 1rem;
+        font-size: 2.2rem;
+        &-break::before {
+          content: " ";
+          display: block;
         }
-        @media (min-width: $bp-ipad) {
-          font-size: 2.5rem;
-          &-break::before {
-            content: " ";
-            display: block;
-          }
-        }
+      }
+      @media (min-width: $bp-ipadpro) {
+        font-size: 2.5rem;
       }
     }
   }

@@ -105,13 +105,11 @@
           @media (min-width: $bp-laptop) {
             padding: 0 4rem;
           }
-          /* padding: 0 2rem; */
         }
         .img-wrapper {
           display: flex;
           margin: 0 auto;
           align-items: center;
-          /* width: 100%; */
           padding-bottom: 0;
           filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
           animation:rotate-vert-center 1s cubic-bezier(.455,.03,.515,.955) both;
@@ -166,9 +164,7 @@
   //solar system
   &__section2 {
     position: relative;
-    /* grid-template:
-      "solar-system"
-      "text"; */
+
     @media (min-width: $bp-ipad) {
       display: grid;
       grid-template: "solar-system text";
@@ -176,8 +172,6 @@
     .solar-system {
       grid-area: solar-system;
       background: black;
-      /* width: 100vw;
-      height: 100vw; */
       width: 33vw;
       height: 33vw;
       display: grid;

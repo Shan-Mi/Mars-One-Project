@@ -14,128 +14,131 @@
   background-size: cover;
   background-position: top;
   position: relative;
+  overflow: hidden;
 
   .hero1 {
-    position: relative;
-    overflow: hidden;
-    @include header-height;
+    @media (min-width: $bp-ipadmini) {
+      position: relative;
+      width: 150vw;
+      height: 120vh;
+      left: -37vw;
+      top: -59vh;
+      background-image: linear-gradient(
+        182deg,
+        #00132c 61%,
+        rgba(21, 52, 98, 0.9) -13%
+      );
+      clip-path: ellipse(50% 50% at 50% 50%);
+      transform: rotate(12deg);
+    }
 
     &::after {
       display: none;
-      @media (min-width: $bp-ipad) {
+      @media (min-width: $bp-ipadmini) {
         content: "";
+        background-color: #00132c;
         display: unset;
         position: absolute;
-        top: -10vh;
-        left: -2vw;
-        z-index: 1;
-        width: 110%;
-        height: 70vh;
-        -webkit-transform: rotate(6deg);
         background-image: linear-gradient(
           182deg,
           #00132c 61%,
           rgba(21, 52, 98, 0.9)
         );
-        border-radius: 0 0 50% 70%;
-        /* border: 1rem solid #436dac; */
-        border: 1.6rem solid #436daca3;
-        margin: -2rem;
+        width: 97%;
+        height: 95%;
+        clip-path: ellipse(50% 50% at 50% 50%);
+        left: 50%;
+        top: 50%;
+        transform: rotate(12deg);
+        transform: translate(-50%, -50%);
       }
     }
+  }
 
-    .hero-content1 {
-      //mobile first
-      //width: 320+
-      text-align: center;
-      @include text-middle-1;
-      z-index: 3;
-      place-self: center;
-      padding: 1em;
-      font-family: "Montserrat", sans-serif;
-      color: white;
-      text-shadow: 2px 2px 5px #000;
-      //not laptop
-      border: 9px solid darkred;
-      border-radius: 5px;
-      outline: 7px ridge rgba(102, 142, 201, 0.51);
-      outline-offset: -17px;
-      background: linear-gradient(45deg, #00000052, transparent);
+  .hero-content1 {
+    //mobile first
+    //width: 320+
+    text-align: center;
+    @include text-middle-1;
+    z-index: 3;
+    place-self: center;
+    padding: 1em;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    //not laptop
+    border: 9px solid darkred;
+    border-radius: 5px;
+    outline: 7px ridge rgba(102, 142, 201, 0.51);
+    outline-offset: -17px;
+    background: linear-gradient(45deg, #00000052, transparent);
 
-      @media (min-width: $bp-ipad) {
-        text-align: left;
-        line-height: normal;
-        /* top: 5vh;
-        left: 64vw; */
-        top: 11vh;
-        left: 55vw;
-        transform: translateX(0) translateY(0);
-        //
-        border: unset;
-        outline: unset;
-        background: unset;
-        //
+    @media (min-width: $bp-ipadmini) {
+      top: 11vh;
+      left: 50%;
+      transform: translateX(-50%);
+      border: unset;
+      outline: unset;
+      background: unset;
+    }
+    @media (min-width: $bp-ipad) {
+      text-align: left;
+      line-height: normal;
+      top: 11vh;
+      left: 65vw;
+/*       transform: translateX(-50%) translateY(0); */
+    }
+    &__h1 {
+      /* animation: moveInTop; */
+      animation: 1s ease-out moveInTop;
+      @media (min-width: $bp-ipadmini) {
+        animation: unset;
       }
-      &__h1 {
-        /* animation: moveInTop; */
-        animation: 1s ease-out moveInTop;
-        @media (min-width: $bp-ipad) {
-          animation: unset;
+      padding-bottom: 1rem;
+      &-break::before {
+        content: " ";
+        display: block;
+      }
+      //
+      &-break {
+        background-image: linear-gradient(178deg, black, #ff8f8f, transparent);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        @media (min-width: $bp-ipadmini) {
+          background: unset;
+          background-clip: unset;
+          color: unset;
         }
-        padding-bottom: 1rem;
+      }
+      //
+      @media (min-width: 467px) {
+        font-size: 2.7rem;
+        letter-spacing: 2px;
+      }
+      @media (min-width: $bp-ipad) {
+        font-size: 3.6rem;
+      }
+    }
+    &__h2 {
+      margin-top: 1rem;
+      animation: 1s ease-out showUp;
+      @media (min-width: $bp-ipadmini) {
+        animation: unset;
+      }
+      color: $color-light-blue;
+      @media (min-width: 467px) {
+        letter-spacing: 2px;
+        font-size: 2rem;
+      }
+      @media (min-width: $bp-ipadmini) {
+        font-size: 2.2rem;
         &-break::before {
           content: " ";
           display: block;
         }
-        //
-        &-break {
-          background-image: linear-gradient(
-            178deg,
-            black,
-            #ff8f8f,
-            transparent
-          );
-          background-clip: text;
-          -webkit-background-clip: text;
-          color: transparent;
-          @media (min-width: $bp-ipad) {
-            background: unset;
-            background-clip: unset;
-            color: unset;
-          }
-        }
-        //
-        @media (min-width: 467px) {
-          font-size: 2.7rem;
-          letter-spacing: 2px;
-        }
-        @media (min-width: $bp-ipad) {
-          font-size: 3.6rem;
-        }
-        /* @media (min-width: $bp-ipadpro) {
-          font-size: 3rem;
-        } */
       }
-      &__h2 {
-        margin-top: 1rem;
-        animation: 1s ease-out showUp;
-        @media (min-width: $bp-ipad) {
-          animation: unset;
-        }
-        color: $color-light-blue;
-        @media (min-width: 467px) {
-          font-size: 2rem;
-        }
-        @media (min-width: $bp-ipad) {
-          font-size: 2.2rem;
-          &-break::before {
-            content: " ";
-            display: block;
-          }
-        }
-        @media (min-width: $bp-ipadpro) {
-          font-size: 2.5rem;
-        }
+      @media (min-width: $bp-ipadpro) {
+        font-size: 2.5rem;
       }
     }
   }

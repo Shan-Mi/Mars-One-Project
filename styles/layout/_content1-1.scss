@@ -5,8 +5,6 @@
 //desktop version:
 //1 row 2 column
 
-//font-color and margin may need to be fixed.
-
 .main {
   position: relative;
   .content1-1 {
@@ -31,14 +29,12 @@
       h2 {
         color: $color-red;
         font-size: 1.7rem;
-        /* font-size: 2rem; */
         @media (min-width: $bp-ipadmini) {
           font-size: calc(7px + 1.6vw);
         }
       }
       p {
         font-size: 1.2rem;
-        /* font-size: 1.5rem; */
         @media (min-width: $bp-ipadmini) {
           font-size: calc(2px + 1.4vw);
         }

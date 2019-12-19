@@ -17,7 +17,6 @@
   flex-direction: column;
   padding: 0 1rem;
   @media (min-width: $bp-ipad) {
-    /* padding: 0 3rem; */
     padding: 3rem;
     padding-left: 6rem;
     padding-right: 5rem;
@@ -58,7 +57,6 @@
           width: 100%;
         }
         @media (min-width: $bp-ipad) {
-          /* width: 70%; */
           width: 11vw;
           min-width: 100px;
         }
@@ -69,15 +67,11 @@
   .base {
     .img-wrapper {
       max-width: 150px; //mobile & tablett
-      //new here
       @media (min-width: $bp-ipad) {
         max-width: unset;
-        /* align-self: stretch; */
         justify-self: left;
       }
       img {
-        /* min-width: 100%;
-        max-width: 150px; */
         width: 90px;
         clip-path: circle(); //mobile
         @media (min-width: 414px) {
@@ -88,9 +82,10 @@
         @media (min-width: $bp-ipad) {
           width: 100%;
           max-width: unset;
-          min-height: 230px;
+          min-height: 240px;
           clip-path: unset;
           object-fit: cover;
+          object-position: right;
           display: block;
         }
       }
@@ -113,7 +108,6 @@
       grid-template: 1.2fr 2fr / 1fr;
       grid-gap: unset;
       .text-wrapper {
-        /* align-items: center; */
         justify-content: space-around;
       }
     }
@@ -124,7 +118,6 @@
       }
       h3 {
         @media (min-width: $bp-ipad) {
-          /*  padding: 0 3rem; */
           margin-bottom: 1rem;
         }
       }
@@ -141,16 +134,12 @@
     padding-top: 2rem;
     border-radius: 10px;
     @media (min-width: 414px) {
-      /* grid-gap: 1.5rem; */
-      /* margin: 0; */
       padding-left: 1rem;
       padding-top: 0;
       grid-template-columns: 1fr 2fr;
     }
     @media (min-width: $bp-ipad) {
       margin: 0;
-      /* grid-gap: 2rem; */
-      //new here
       padding-left: 0;
       grid-template-columns: 1.4fr 2fr;
       border-radius: unset;
@@ -161,12 +150,8 @@
       display: block;
 
       img {
-        /* width: 45%; */
         display: block;
         margin: 0 auto;
-        @media (min-width: $bp-ipad) {
-          /*  width: 55%; */
-        }
       }
     }
 
@@ -186,7 +171,6 @@
         font-size: 1.3rem;
         color: $color-red;
         @media (min-width: $bp-ipad) {
-          /* font-size: 1.3rem; */
           font-size: $font-h;
           margin-bottom: 0;
         }
@@ -194,7 +178,6 @@
       p {
         font-size: 1.1rem;
         @media (min-width: $bp-ipad) {
-          /* font-size: 1.1rem; */
           font-size: $font-p;
           line-height: calc(8px + 1vw);
         }
