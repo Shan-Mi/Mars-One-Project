@@ -1364,7 +1364,7 @@ body h1 {
   .main__section2 {
     display: -ms-grid;
     display: grid;
-    grid-template: "solar-system text";
+        grid-template-areas: "solar-system text";
   }
 }
 

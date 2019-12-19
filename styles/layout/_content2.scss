@@ -167,7 +167,7 @@
 
     @media (min-width: $bp-ipad) {
       display: grid;
-      grid-template: "solar-system text";
+      grid-template-areas: "solar-system text";
     }
     .solar-system {
       grid-area: solar-system;
