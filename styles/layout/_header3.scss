@@ -15,6 +15,7 @@
   background-size: cover;
   background-position: top;
   position: relative;
+  overflow: hidden;
 
   .hero3 {
     @media (min-width: $bp-ipad) {
@@ -69,7 +70,7 @@
       text-align: left;
       line-height: normal;
       position: absolute;
-      top: 48vh;
+      top: 45vh;
       left: 13vw;
       transform: translateX(0) translateY(0);
     }

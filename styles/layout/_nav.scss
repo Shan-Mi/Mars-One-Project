@@ -20,6 +20,9 @@
       margin-right: auto;
       align-self: center;
     }
+    @media (min-width: 1440px) {
+      padding-left: 5rem;
+    }
   }
 
   &__list {
